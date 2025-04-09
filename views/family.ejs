@@ -1,0 +1,13 @@
+<%- include('partials/head') %>
+
+
+    <%- include('partials/navbar') %>
+        <h1> My Family Members</h1>
+        <ul>
+            <% for (let members of family){ %>
+                <li>
+                    <%= members %>
+                </li>
+                <% }%>
+        </ul>
+        <%- include('partials/footer')%>
