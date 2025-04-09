@@ -1,6 +1,4 @@
-<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- to darken the navbar background -->
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Express Demo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -10,18 +8,39 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link" href="/" id="home-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/q/soccer">Soccer</a>
+                    <a class="nav-link" href="/q/soccer" id="soccer-link">Soccer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/q/chickens">Chickens</a>
+                    <a class="nav-link" href="/q/chickens" id="chickens-link">Chickens</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/q/mightyharvest">Mighty Harvest</a>
+                    <a class="nav-link" href="/q/mightyharvest" id="mightyharvest-link">Mighty Harvest</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<script>
+    // Get the current URL
+    const currentPath = window.location.pathname;
+
+    // Remove 'active' class from all links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // Add 'active' class to the link that matches the current URL
+    if (currentPath === '/') {
+        document.getElementById('home-link').classList.add('active');
+    } else if (currentPath === '/q/soccer') {
+        document.getElementById('soccer-link').classList.add('active');
+    } else if (currentPath === '/q/chickens') {
+        document.getElementById('chickens-link').classList.add('active');
+    } else if (currentPath === '/q/mightyharvest') {
+        document.getElementById('mightyharvest-link').classList.add('active');
+    }
+</script>
